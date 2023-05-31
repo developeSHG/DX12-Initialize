@@ -8,7 +8,6 @@
 void Engine::Init(const WindowInfo& info)
 {
 	_window = info;
-
 	ResizeWindow(info.width, info.height);
 
 	// 그려질 화면 크기를 설정
@@ -23,10 +22,26 @@ void Engine::Init(const WindowInfo& info)
 	_device->Init();
 	_cmdQueue->Init(_device->GetDevice(), _swapChain, _descHeap);
 	_swapChain->Init(info, _device->GetDXGI(), _cmdQueue->GetCmdQueue());
+	_descHeap->Init(_device->GetDevice(), _swapChain);
 }
 
 void Engine::Render()
 {
+	RenderBegin();
+
+	// TODO : 나머지 물체들 그려준다
+
+	RenderEnd();
+}
+
+void Engine::RenderBegin()
+{
+	_cmdQueue->RenderBegin(&_viewport, &_scissorRect);
+}
+
+void Engine::RenderEnd()
+{
+	_cmdQueue->RenderEnd();
 }
 
 void Engine::ResizeWindow(int32 width, int32 height)
