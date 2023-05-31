@@ -3,9 +3,20 @@
 class Engine
 {
 public:
-	void Init();		// 클라이언트에서 호출함 (받아야하는 정보 : 윈도우 핸들, 창모드인지 등등)
+	void Init(const WindowInfo& info);		// 클라이언트에서 호출함 (받아야하는 정보 : 윈도우 핸들, 창모드인지 등등)
 	void Render();
 
+	void ResizeWindow(int32 width, int32 height);
+
 private:
+	// 그려질 화면 크기 관련
+	WindowInfo _window;
+	D3D12_VIEWPORT _viewport = {};
+	D3D12_RECT _scissorRect = {};
+
+	shared_ptr<class Device> _device;
+	shared_ptr<class CommandQueue> _cmdQueue;
+	shared_ptr<class SwapChain> _swapChain;
+	shared_ptr<class DescriptorHeap> _descHeap;
 };
 
