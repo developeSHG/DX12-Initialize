@@ -10,6 +10,9 @@
     <Filter Include="Utils">
       <UniqueIdentifier>{8c6554a1-a138-4862-ad29-c530ff1b02be}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{faae06f8-b35e-42a7-92c8-65d50dd86248}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -17,6 +20,27 @@
     </ClCompile>
     <ClCompile Include="EnginePch.cpp">
       <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandQueue.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Device.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="SwapChain.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="RootSignature.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Resource</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -29,5 +53,31 @@
     <ClInclude Include="d3dx12.h">
       <Filter>Utils</Filter>
     </ClInclude>
+    <ClInclude Include="Engine.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandQueue.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Device.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="SwapChain.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="RootSignature.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Resources\Shader\default.hlsli">
+      <Filter>Shader</Filter>
+    </None>
   </ItemGroup>
 </Project>
