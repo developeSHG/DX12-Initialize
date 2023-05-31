@@ -1,9 +1,5 @@
 #include "pch.h"
 #include "Engine.h"
-#include "Device.h"
-#include "CommandQueue.h"
-#include "SwapChain.h"
-#include "DescriptorHeap.h"
 
 void Engine::Init(const WindowInfo& info)
 {
@@ -17,12 +13,10 @@ void Engine::Init(const WindowInfo& info)
 	_device = make_shared<Device>();
 	_cmdQueue = make_shared<CommandQueue>();
 	_swapChain = make_shared<SwapChain>();
-	_descHeap = make_shared<DescriptorHeap>();
 
 	_device->Init();
-	_cmdQueue->Init(_device->GetDevice(), _swapChain, _descHeap);
-	_swapChain->Init(info, _device->GetDXGI(), _cmdQueue->GetCmdQueue());
-	_descHeap->Init(_device->GetDevice(), _swapChain);
+	_cmdQueue->Init(_device->GetDevice(), _swapChain);
+	_swapChain->Init(info, _device->GetDevice(), _device->GetDXGI(), _cmdQueue->GetCmdQueue());
 }
 
 void Engine::Render()
@@ -50,7 +44,6 @@ void Engine::ResizeWindow(int32 width, int32 height)
 	_window.height = height;
 
 	RECT rect = { 0, 0, width, height };
-	// 윈도우 크기를 정한 다음, 내가 원하는 포지션에 세팅해주겠다
 	::AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);
 	::SetWindowPos(_window.hwnd, 0, 100, 100, width, height, 0);
 }
