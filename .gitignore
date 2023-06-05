@@ -47,3 +47,13 @@ Game/Output/Client.exe
 Game/Output/Client.ilk
 Game/Output/Client.pdb
 Game/Output/Engine.lib
+Game/.vs/Game/v16/Solution.VC.db
+Game/.vs/Game/v16/Solution.VC.db-shm
+Game/.vs/Game/v16/Solution.VC.db-wal
+Game/Engine/x64/Debug/Mesh.obj
+Game/Engine/x64/Debug/RootSignature.obj
+Game/Engine/x64/Debug/Shader.obj
+Game/Engine/x64/Debug/ConstantBuffer.obj
+Game/Engine/x64/Debug/TableDescriptorHeap.obj
+Game/Engine/x64/Debug/Texture.obj
+Game/Engine/x64/Debug/Engine.tlog/unsuccessfulbuild
