@@ -1,7 +1,7 @@
 # DX12-Initialize
-DirectX12 - 초기화
+<h3>DirectX12 - 초기화</h3>
 
-Blog : https://song-ift.tistory.com/category/DirectX12/Initialize
+<b>Blog : https://song-ift.tistory.com/category/DirectX12/Initialize</b>
 
 <hr size="5">
 
